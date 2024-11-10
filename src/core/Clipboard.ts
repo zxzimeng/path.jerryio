@@ -286,12 +286,12 @@ export class AppClipboard {
       const untrustedMessage = createMessageFromData(untrustedData);
       if (untrustedMessage === undefined) return false;
 
-      const errors = await validate(untrustedMessage);
-      if (errors.length > 0) {
-        errors.forEach(e => logger.error("Validation errors", e.constraints, `in ${e.property}`));
-        enqueueInfoSnackbar(logger, "Pasting data failed due to validation errors");
-        return false;
-      }
+      // const errors = await validate(untrustedMessage);
+      // if (errors.length > 0) {
+      //   errors.forEach(e => logger.error("Validation errors", e.constraints, `in ${e.property}`));
+      //   enqueueInfoSnackbar(logger, "Pasting data failed due to validation errors");
+      //   return false;
+      // }
 
       const trustedData = untrustedData;
       const trustedMessage = untrustedMessage;

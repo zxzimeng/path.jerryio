@@ -382,11 +382,11 @@ export class MainApp {
       paths.push(path);
     }
 
-    const errors = [...(await validate(gc)), ...(await Promise.all(paths.map(path => validate(path)))).flat()];
-    if (errors.length > 0) {
-      errors.forEach(e => logger.error("Validation errors", e.constraints, `in ${e.property}`, e));
-      throw new Error("Unable to open the path file due to validation errors.");
-    }
+    // const errors = [...(await validate(gc)), ...(await Promise.all(paths.map(path => validate(path)))).flat()];
+    // if (errors.length > 0) {
+    //   errors.forEach(e => logger.error("Validation errors", e.constraints, `in ${e.property}`, e));
+    //   throw new Error("Unable to open the path file due to validation errors.");
+    // }
 
     ga.gtag("event", "import_file_format", { format: format.getName() });
 
